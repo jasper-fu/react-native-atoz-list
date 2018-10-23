@@ -62,7 +62,7 @@ export default class AlphabetPicker extends Component {
 
     _findTouchedLetter(y) {
         let top = y - (this.absContainerTop || 0);
-        const {alphabet} = this.state
+        let {alphabet} = this.state
 
         if (top >= 1 && top <= this.containerHeight) {
             return alphabet[Math.round((top / this.containerHeight) * alphabet.length)]
@@ -77,7 +77,7 @@ export default class AlphabetPicker extends Component {
     }
 
     render() {
-        const {alphabet} = this.state
+        let {alphabet} = this.state
         this._letters = (
             alphabet.map((letter) => <LetterPicker letter={letter} key={letter} />)
         );
